@@ -22,7 +22,6 @@ export default defineEventHandler(async (event) => {
 
     const decoded = decodeAccessToken(token)
 
-    console.log(decoded)
     if (!decoded) {
         return sendError(event, createError({
             statusCode: 401,
