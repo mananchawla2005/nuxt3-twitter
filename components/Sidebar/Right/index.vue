@@ -5,7 +5,7 @@
         <div class="relative m-2">
             <div class="absolute flex items-center h-full pl-4 text-gray-600 cursor-pointer">
                 <div class="w-6 h-6">
-                    <SearchIcon @click="handleSearch" />
+                    <MagnifyingGlassIcon @click="handleSearch" />
                 </div>
             </div>
             <input v-model="search"
@@ -81,7 +81,7 @@
     </div>
 </template>
 <script setup>
-import { SearchIcon } from '@heroicons/vue/24/outline';
+import { MagnifyingGlassIcon } from '@heroicons/vue/24/outline';
 const search = ref('')
 const emitter = useEmitter()
 function handleSearch() {

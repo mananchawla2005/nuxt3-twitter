@@ -4,7 +4,7 @@
         <TweetItemActionsIcon color="blue" @on-click="emits('onCommentClick')" :size="size">
 
             <template v-slot:icon="{ classes }">
-                <ChatIcon :class="classes" />
+                <ChatBubbleOvalLeftEllipsisIcon :class="classes" />
             </template>
 
             <template v-if="showStats" v-slot:default>
@@ -16,7 +16,7 @@
         <TweetItemActionsIcon color="green" :size="size">
 
             <template v-slot:icon="{ classes }">
-                <RefreshIcon :class="classes" />
+                <ArrowPathIcon :class="classes" />
             </template>
 
             <template v-if="showStats" v-slot:default>
@@ -41,7 +41,7 @@
         <TweetItemActionsIcon color="blue" :size="size">
 
             <template v-slot:icon="{ classes }">
-                <UploadIcon :class="classes" />
+                <ArrowUpTrayIcon :class="classes" />
             </template>
 
             <template v-if="showStats" v-slot:default>
@@ -53,7 +53,7 @@
     </div>
 </template>
 <script setup>
-import { ChatIcon, RefreshIcon, HeartIcon, UploadIcon } from '@heroicons/vue/24/outline';
+import { ChatBubbleOvalLeftEllipsisIcon, ArrowPathIcon, HeartIcon, ArrowUpTrayIcon } from '@heroicons/vue/24/outline';
 const props = defineProps({
     tweet: {
         type: Object,

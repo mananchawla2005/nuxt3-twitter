@@ -33,7 +33,7 @@
 
             <SidebarLeftTab>
                 <template v-slot:icon>
-                    <BellIcon />
+                    <BellAlertIcon />
                 </template>
                 <template v-slot:name>
                     Notifications
@@ -81,7 +81,7 @@
 
             <SidebarLeftTab>
                 <template v-slot:icon>
-                    <DotsCircleHorizontalIcon />
+                    <EllipsisHorizontalCircleIcon />
                 </template>
                 <template v-slot:name>
                     More
@@ -137,7 +137,7 @@
 </template>
 <script setup>
 import { HomeIcon } from "@heroicons/vue/24/solid"
-import { HashtagIcon, BellIcon, InboxIcon, BookmarkIcon, DocumentTextIcon, UserIcon, DotsCircleHorizontalIcon, PencilIcon, ChevronDownIcon } from "@heroicons/vue/24/outline"
+import { HashtagIcon, BellAlertIcon, InboxIcon, BookmarkIcon, DocumentTextIcon, UserIcon, EllipsisHorizontalCircleIcon, PencilIcon, ChevronDownIcon } from "@heroicons/vue/24/outline"
 const { defaultTransition } = useTailwindConfig()
 const emits = defineEmits(['onTweet', 'onLogout'])
 const props = defineProps({
