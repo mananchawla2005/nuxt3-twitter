@@ -8,20 +8,21 @@ export default defineEventHandler(async (event) => {
         '/api/auth/user'
     ]
 
-    const isHandledByThisMiddleware = endpoints.some(endopoint => {
-        const pattern = new UrlPattern(endopoint)
+    const isHandledByThisMiddleware = endpoints.some(endpoint => {
+        const pattern = new UrlPattern(endpoint)
 
-        return pattern.match(event.req.url)
+        return pattern.match(event.node.req.url)
     })
 
     if (!isHandledByThisMiddleware) {
         return
     }
 
-    const token = event.req.headers['authorization']?.split(' ')[1]
+    const token = event.node.req.headers['authorization']?.split(' ')[1]
 
     const decoded = decodeAccessToken(token)
 
+    console.log(decoded)
     if (!decoded) {
         return sendError(event, createError({
             statusCode: 401,
