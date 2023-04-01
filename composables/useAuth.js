@@ -70,16 +70,17 @@ export default () => {
     const reRefreshAccessToken = () => {
         const authToken = useAuthToken()
 
-        if (!authToken) {
+        if (!authToken.value) {
             return
         }
 
         const jwt = jwt_decode(authToken.value)
+        console.log(jwt.exp)
 
         const newRefreshTime = jwt.exp - 60000
 
-        setTimeout(() => {
-            refreshToken()
+        setTimeout(async () => {
+            await refreshToken()
             reRefreshAccessToken()
         }, newRefreshTime);
     }
