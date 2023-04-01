@@ -1,6 +1,6 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3 Twitter
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+![image](https://user-images.githubusercontent.com/42414965/229302378-7838b5f6-de07-467c-b7eb-8c2897a780bf.png)
 
 ## Setup
 
