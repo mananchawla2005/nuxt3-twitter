@@ -75,7 +75,6 @@ export default () => {
         }
 
         const jwt = jwt_decode(authToken.value)
-        console.log(jwt.exp)
 
         const newRefreshTime = jwt.exp - 60000
 
@@ -104,11 +103,28 @@ export default () => {
         })
     }
 
+    const logout = () => {
+        return new Promise(async (resolve, reject) => {
+            try {
+                await useFetchApi('/api/auth/logout', {
+                    method: 'POST'
+                })
+
+                setToken(null)
+                setUser(null)
+                resolve()
+            } catch (error) {
+                reject(error)
+            }
+        })
+    }
+
     return {
         login,
         useAuthUser,
         useAuthToken,
         initAuth,
-        useAuthLoading
+        useAuthLoading,
+        logout
     }
 }
